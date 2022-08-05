@@ -2,7 +2,7 @@
 """
 Created on Fri Aug  5 12:51:28 2022
 
-@author: DELL
+@author: Purushotam Sangroula
 
 Our approach for solving nQueen will be to place queens row-wise order.
 """
