@@ -65,6 +65,8 @@ def nQueen(row):
     
     # lets iteratively place queens in each column of given row
     for col in range(n):
+        printBoard()
+        print()
         if isSafe(row, col):
             board[row][col] = 'Q'
             # as soon as we place a queen in a row we move to next row recursively..
