@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Aug  5 12:51:28 2022
+Created on Fri Aug  5 13:44:58 2022
 
 @author: Purushotam Sangroula
 
 Our approach for solving nQueen will be to place queens row-wise order.
+We will find all possible solutions.
 """
 
 
@@ -60,7 +61,7 @@ def nQueen(row):
     if row == n:
         print("You have successfully placed the queens.")
         printBoard()
-        return True
+        return True   # This return is necessary to stop array index out of range otherwise no significant meaning in the algorithm.
 
     
     # lets iteratively place queens in each column of given row
@@ -70,13 +71,15 @@ def nQueen(row):
         if isSafe(row, col):
             board[row][col] = 'Q'
             # as soon as we place a queen in a row we move to next row recursively..
-            if(nQueen(row + 1)):
-                return True
+            # if(nQueen(row + 1)):
+            #     return True
+            nQueen(row+1)
             board[row][col] = '-'
+            
     return False
 
 # allBoards = []
-n = 4 #int(input('Enter the size of the board'))
+n = 6 #int(input('Enter the size of the board'))
 board = [['-' for _ in range(n)] for _ in range(n)]
 print(nQueen(0))
 
